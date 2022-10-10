@@ -1,0 +1,401 @@
+{
+    "orders": [
+        {
+            "firstName": "Oleksandr",
+            "lastName": "Tretiakov",
+            "patronymic": "Oleksandrovich",
+            "email": "sashaaleks72@gmail.com",
+            "city": "Хмельницький",
+            "department": "Відділення №22 (до 30 кг): вул. Шевченка, 11",
+            "deliveryAddress": "",
+            "cartItems": [
+                {
+                    "id": "5cb75251-5a32-4766-90c1-f25b5b53f987",
+                    "title": "Coffee machine 2",
+                    "quantity": 2,
+                    "imgUrl": "https://content.rozetka.com.ua/goods/images/big_tile/15790055.jpg",
+                    "price": 1579
+                },
+                {
+                    "id": "0d76c533-65ba-449c-a3d2-75a9902e0829",
+                    "title": "Coffee machine 3",
+                    "quantity": 1,
+                    "imgUrl": "https://content2.rozetka.com.ua/goods/images/big_tile/29270053.jpg",
+                    "price": 2379
+                },
+                {
+                    "id": "ae6e6455-ae16-44f9-83c0-5c03712421bf",
+                    "title": "Coffee machine 5",
+                    "quantity": 1,
+                    "imgUrl": "https://content.rozetka.com.ua/goods/images/big_tile/76717007.jpg",
+                    "price": 1989
+                },
+                {
+                    "id": "688afdf3-18ce-4851-9611-2caaa97fedab",
+                    "title": "Teapot 2",
+                    "quantity": 1,
+                    "imgUrl": "https://content1.rozetka.com.ua/goods/images/big_tile/64732971.jpg",
+                    "price": 1189
+                }
+            ],
+            "orderStatus": "Waiting for accept",
+            "orderDate": "9.9.2022",
+            "totalSum": 8715,
+            "id": 1
+        },
+        {
+            "id": 2,
+            "firstName": "Oleksandr",
+            "lastName": "Tretiakov",
+            "patronymic": "Oleksandrovich",
+            "email": "sashaaleks72@gmail.com",
+            "city": "Хмельницький",
+            "department": "Відділення №22 (до 30 кг): вул. Шевченка, 11",
+            "deliveryAddress": "",
+            "cartItems": [
+                {
+                    "id": "688afdf3-18ce-4851-9611-2caaa97fedab",
+                    "title": "Teapot 2",y
+                    "quantity": 2,
+                    "imgUrl": "https://content1.rozetka.com.ua/goods/images/big_tile/64732971.jpg",
+                    "price": 1189
+                },
+                {
+                    "id": "0c0b4f1c-5387-4301-a427-947b41c6201d",
+                    "title": "Teapot 3",
+                    "quantity": 2,
+                    "imgUrl": "https://content1.rozetka.com.ua/goods/images/big_tile/19966325.jpg",
+                    "price": 1899
+                }
+            ],
+            "orderStatus": "Waiting for accept",
+            "orderDate": "10.9.2022",
+            "totalSum": 6176
+        }
+    ],
+    "users": [
+        {
+            "firstName": "Oleksandr",
+            "lastName": "Tretiakov",
+            "patronymic": "Oleksandrovich",
+            "birthday": "2002-01-17",
+            "id": "ES9zC9J"
+        },
+        {
+            "email": "sashaaleks73@gmail.com",
+            "pass": "Gamer_Guy123",
+            "firstName": "Oleksandr",
+            "lastName": "Tretiakov",
+            "patronymic": "Oleksandrovich",
+            "birthday": "2002-01-17",
+            "id": "SjKcJ82"
+        },
+        {
+            "email": "sashaaleks74@gmail.com",
+            "pass": "Gamer_Guy123",
+            "firstName": "Oleksandr",
+            "lastName": "Tretiakov",
+            "patronymic": "Oleksandrovich",
+            "birthday": "2002-01-17",
+            "id": "aR2MOIc"
+        },
+        {
+            "email": "sashaaleks72@gmail.com",
+            "pass": "ds",
+            "firstName": "Александр",
+            "lastName": "Третьяков",
+            "patronymic": "Oleksandrovich",
+            "birthday": "2022-10-28",
+            "id": "PzHvUH7"
+        },
+        {
+            "email": "sashaaleks72@gmail.com",
+            "pass": "Gamer_Guy123",
+            "firstName": "Oleksandr",
+            "lastName": "Tretiakov",
+            "patronymic": "Oleksandrovich",
+            "birthday": "2002-01-17",
+            "id": "VJ0gF-h"
+        }
+    ],
+    "catalogItems": [
+        {
+            "id": 1,
+            "title": "Teapots",
+            "imgUrl": "https://content1.rozetka.com.ua/goods/images/big_tile/267792323.jpg",
+            "routeName": "teapots"
+        },
+        {
+            "id": 2,
+            "title": "Coffee machines",
+            "imgUrl": "https://content.rozetka.com.ua/goods/images/big_tile/160433459.jpg",
+            "routeName": "coffee-machines"
+        }
+    ],
+    "products": [
+        {
+            "id": "12d1f534-62a6-4e0f-9273-27f2f38bf261",
+            "title": "Teapot 1",
+            "quantity": 12,
+            "price": 1799,
+            "imgUrl": "https://content1.rozetka.com.ua/goods/images/big_tile/267792323.jpg",
+            "description": "Good teapot",
+            "manufacturerCountry": "China",
+            "capacity": 12,
+            "warrantyInMonths": 12,
+            "productType": "teapots"
+        },
+        {
+            "id": "688afdf3-18ce-4851-9611-2caaa97fedab",
+            "title": "Teapot 2",
+            "quantity": 12,
+            "price": 1189,
+            "imgUrl": "https://content1.rozetka.com.ua/goods/images/big_tile/64732971.jpg",
+            "description": "Good teapot",
+            "manufacturerCountry": "China",
+            "capacity": 12,
+            "warrantyInMonths": 12,
+            "productType": "teapots"
+        },
+        {
+            "id": "0c0b4f1c-5387-4301-a427-947b41c6201d",
+            "title": "Teapot 3",
+            "quantity": 12,
+            "price": 1899,
+            "imgUrl": "https://content1.rozetka.com.ua/goods/images/big_tile/19966325.jpg",
+            "description": "Good teapot",
+            "manufacturerCountry": "China",
+            "capacity": 12,
+            "warrantyInMonths": 12,
+            "productType": "teapots"
+        },
+        {
+            "id": "109bc25c-895b-42c1-b530-e753bc06eebc",
+            "title": "Teapot 4",
+            "quantity": 12,
+            "price": 5299,
+            "imgUrl": "https://content.rozetka.com.ua/goods/images/big_tile/10648417.jpg",
+            "description": "Good teapot",
+            "manufacturerCountry": "China",
+            "capacity": 12,
+            "warrantyInMonths": 12,
+            "productType": "teapots"
+        },
+        {
+            "id": "2b2ecd80-c8a1-4faa-a357-11472b358a6d",
+            "title": "Teapot 5",
+            "quantity": 12,
+            "price": 3289,
+            "imgUrl": "https://content2.rozetka.com.ua/goods/images/big_tile/11304999.jpg",
+            "description": "Good teapot",
+            "manufacturerCountry": "China",
+            "capacity": 12,
+            "warrantyInMonths": 12,
+            "productType": "teapots"
+        },
+        {
+            "id": "4a1af03e-7ee7-4a67-83a3-4da8de5a3b5e",
+            "title": "Teapot 6",
+            "quantity": 12,
+            "price": 4329,
+            "imgUrl": "https://content1.rozetka.com.ua/goods/images/big_tile/70266833.jpg",
+            "description": "Good teapot",
+            "manufacturerCountry": "China",
+            "capacity": 12,
+            "warrantyInMonths": 12,
+            "productType": "teapots"
+        },
+        {
+            "id": "7cb8ad11-142d-4493-b576-bff83b638b0f",
+            "title": "Teapot 7",
+            "quantity": 12,
+            "price": 1399,
+            "imgUrl": "https://content.rozetka.com.ua/goods/images/big_tile/14708920.jpg",
+            "description": "Good teapot",
+            "manufacturerCountry": "China",
+            "capacity": 12,
+            "warrantyInMonths": 12,
+            "productType": "teapots"
+        },
+        {
+            "id": "60d242a2-0f63-49fd-bb8e-7ca1abd8a50f",
+            "title": "Teapot 8",
+            "quantity": 12,
+            "price": 1469,
+            "imgUrl": "https://content1.rozetka.com.ua/goods/images/big_tile/283417981.png",
+            "description": "Good teapot",
+            "manufacturerCountry": "China",
+            "capacity": 12,
+            "warrantyInMonths": 12,
+            "productType": "teapots"
+        },
+        {
+            "id": "f7ed5849-5412-4842-bdc6-a9a73a721264",
+            "title": "Teapot 9",
+            "quantity": 12,
+            "price": 1599,
+            "imgUrl": "https://content1.rozetka.com.ua/goods/images/big_tile/10626237.jpg",
+            "description": "Good teapot",
+            "manufacturerCountry": "China",
+            "capacity": 12,
+            "warrantyInMonths": 12,
+            "productType": "teapots"
+        },
+        {
+            "id": "34882edb-d24f-4963-a73a-ae2556442ef0",
+            "title": "Teapot 10",
+            "quantity": 12,
+            "price": 2399,
+            "imgUrl": "https://content1.rozetka.com.ua/goods/images/big_tile/81865256.jpg",
+            "description": "Good teapot",
+            "manufacturerCountry": "China",
+            "capacity": 12,
+            "warrantyInMonths": 12,
+            "productType": "teapots"
+        },
+        {
+            "id": "f1d40d20-daa4-40cd-9f24-b7ccd28d71db",
+            "title": "Teapot 11",
+            "quantity": 12,
+            "price": 2899,
+            "imgUrl": "https://content.rozetka.com.ua/goods/images/big_tile/142971427.jpg",
+            "description": "Good teapot",
+            "manufacturerCountry": "China",
+            "capacity": 12,
+            "warrantyInMonths": 12,
+            "productType": "teapots"
+        },
+        {
+            "id": "5f3121a0-002b-42d7-9237-8c3d0d246c83",
+            "title": "Teapot 12",
+            "quantity": 12,
+            "price": 2229,
+            "imgUrl": "https://content.rozetka.com.ua/goods/images/big_tile/163131692.jpg",
+            "description": "Good teapot",
+            "manufacturerCountry": "China",
+            "capacity": 12,
+            "warrantyInMonths": 12,
+            "productType": "teapots"
+        },
+        {
+            "id": "41773677-ddda-45ff-8d5d-ebee4ce64483",
+            "title": "Coffee machine 1",
+            "quantity": 9,
+            "price": 2229,
+            "imgUrl": "https://content.rozetka.com.ua/goods/images/big_tile/160433459.jpg",
+            "description": "Good teapot",
+            "manufacturerCountry": "China",
+            "capacity": 12,
+            "warrantyInMonths": 12,
+            "productType": "coffee-machines"
+        },
+        {
+            "id": "5cb75251-5a32-4766-90c1-f25b5b53f987",
+            "title": "Coffee machine 2",
+            "quantity": 3,
+            "price": 1579,
+            "imgUrl": "https://content.rozetka.com.ua/goods/images/big_tile/15790055.jpg",
+            "description": "Good teapot",
+            "manufacturerCountry": "China",
+            "capacity": 12,
+            "warrantyInMonths": 24,
+            "productType": "coffee-machines"
+        },
+        {
+            "id": "0d76c533-65ba-449c-a3d2-75a9902e0829",
+            "title": "Coffee machine 3",
+            "quantity": 5,
+            "price": 2379,
+            "imgUrl": "https://content2.rozetka.com.ua/goods/images/big_tile/29270053.jpg",
+            "description": "Good teapot",
+            "manufacturerCountry": "China",
+            "capacity": 12,
+            "warrantyInMonths": 18,
+            "productType": "coffee-machines"
+        },
+        {
+            "id": "27d8fbe2-9ab0-4134-adfe-3d74ee5f6b36",
+            "title": "Coffee machine 4",
+            "quantity": 17,
+            "price": 1899,
+            "imgUrl": "https://content2.rozetka.com.ua/goods/images/big_tile/160392353.jpg",
+            "description": "Good teapot",
+            "manufacturerCountry": "China",
+            "capacity": 12,
+            "warrantyInMonths": 12,
+            "productType": "coffee-machines"
+        },
+        {
+            "id": "ae6e6455-ae16-44f9-83c0-5c03712421bf",
+            "title": "Coffee machine 5",
+            "quantity": 3,
+            "price": 1989,
+            "imgUrl": "https://content.rozetka.com.ua/goods/images/big_tile/76717007.jpg",
+            "description": "Good teapot",
+            "manufacturerCountry": "China",
+            "capacity": 12,
+            "warrantyInMonths": 6,
+            "productType": "coffee-machines"
+        },
+        {
+            "id": "63224a0b-dd82-443d-bdf6-3509e43d8132",
+            "title": "Coffee machine 6",
+            "quantity": 9,
+            "price": 2359,
+            "imgUrl": "https://content.rozetka.com.ua/goods/images/big_tile/45610581.jpg",
+            "description": "Good teapot",
+            "manufacturerCountry": "China",
+            "capacity": 12,
+            "warrantyInMonths": 30,
+            "productType": "coffee-machines"
+        },
+        {
+            "id": "0e54fbd4-fdf0-4b75-8332-d6d3dcb971dd",
+            "title": "Coffee machine 7",
+            "quantity": 10,
+            "price": 3599,
+            "imgUrl": "https://content1.rozetka.com.ua/goods/images/big_tile/160843463.jpg",
+            "description": "Good teapot",
+            "manufacturerCountry": "China",
+            "capacity": 12,
+            "warrantyInMonths": 24,
+            "productType": "coffee-machines"
+        },
+        {
+            "id": "524b186c-1a03-459d-a224-dc5901115ac0",
+            "title": "Coffee machine 8",
+            "quantity": 8,
+            "price": 4179,
+            "imgUrl": "https://content.rozetka.com.ua/goods/images/big_tile/167686386.jpg",
+            "description": "Good teapot",
+            "manufacturerCountry": "China",
+            "capacity": 12,
+            "warrantyInMonths": 6,
+            "productType": "coffee-machines"
+        },
+        {
+            "id": "bed055de-7103-443f-9c5e-286398386a54",
+            "title": "Coffee machine 9",
+            "quantity": 5,
+            "price": 1789,
+            "imgUrl": "https://content.rozetka.com.ua/goods/images/big_tile/13821301.jpg",
+            "description": "Good teapot",
+            "manufacturerCountry": "China",
+            "capacity": 12,
+            "warrantyInMonths": 24,
+            "productType": "coffee-machines"
+        },
+        {
+            "id": "00f5895f-1a8f-4025-8405-6147570ca8e2",
+            "title": "Coffee machine 10",
+            "quantity": 7,
+            "price": 6789,
+            "imgUrl": "https://content2.rozetka.com.ua/goods/images/big_tile/11675316.jpg",
+            "description": "Good teapot",
+            "manufacturerCountry": "China",
+            "capacity": 12,
+            "warrantyInMonths": 12,
+            "productType": "coffee-machines"
+        }
+    ]
+}
