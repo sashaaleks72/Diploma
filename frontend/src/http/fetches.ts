@@ -4,7 +4,8 @@ import OrderModel from "../models/OrderModel";
 import ProfileModel from "../models/ProfileModel";
 import SignUpModel from "../models/SignUpModel";
 
-const apiUrl = "http://localhost:5000";
+// const apiUrl = "http://localhost:5000";
+const apiUrl = "https://localhost:44374/api";
 
 export const makeAnOrder = async (order: OrderModel): Promise<any> => {
     const requestOptions = {
@@ -29,7 +30,7 @@ export const getUserOrders = async (): Promise<OrderModel[]> => {
 };
 
 export const getCatalogItems = async (): Promise<CatalogItemDto[]> => {
-    const result: Response = await fetch(`${apiUrl}/catalogItems`);
+    const result: Response = await fetch(`${apiUrl}/catalog-items`);
     const response = await result.json();
 
     const catalogItems: CatalogItemDto[] = response;
@@ -49,12 +50,17 @@ export const getProducts = async (
         [fieldForSort, howToSort] = sortParams.split(":");
     }
 
-    const result: Response = await fetch(
-        `${apiUrl}/products?productType=${productType}&_sort=${fieldForSort}&_order=${howToSort}&_page=${page}&_limit=${limit}`
-    );
-    const response = await result.json();
+    let products: ProductDto[] = [];
 
-    const products: ProductDto[] = response;
+    await fetch(
+        `${apiUrl}/products?productType=${productType}&sort=${fieldForSort}&order=${howToSort}&page=${page}&limit=${limit}`
+    ).then(async (result) => {
+        if (result.status === 404) {
+            return products;
+        }
+
+        products = await result.json();
+    });
 
     return products;
 };

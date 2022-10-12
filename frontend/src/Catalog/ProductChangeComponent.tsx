@@ -2,17 +2,29 @@ import { observer } from "mobx-react-lite";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { catalog } from "../App";
+import CatalogItemDto from "../dtos/CatalogItemDto";
 import ProductDto from "../dtos/ProductDto";
-import { changeProduct, getProductById } from "../http/fetches";
+import {
+    changeProduct,
+    getCatalogItems,
+    getProductById,
+} from "../http/fetches";
 
 const ProductChangeComponent = observer((): JSX.Element => {
     const [product, setProduct] = useState<ProductDto>();
+    const [productTypes, setProductTypes] = useState<CatalogItemDto[]>([]);
+
     const navigate = useNavigate();
+
     const { id } = useParams();
 
     useEffect(() => {
         const init = async () => {
             const product: ProductDto = await getProductById(id);
+            const productTypesFromResponse: CatalogItemDto[] =
+                await getCatalogItems();
+
+            setProductTypes(productTypesFromResponse);
             setProduct(product);
         };
 
@@ -34,6 +46,7 @@ const ProductChangeComponent = observer((): JSX.Element => {
                         warrantyInMonths: { value: number };
                         capacity: { value: number };
                         description: { value: string };
+                        productType: { value: string };
                         imgUrl: { value: string };
                     };
 
@@ -46,6 +59,7 @@ const ProductChangeComponent = observer((): JSX.Element => {
                         warrantyInMonths: target.warrantyInMonths.value,
                         capacity: target.capacity.value,
                         description: target.description.value,
+                        productType: target.productType.value,
                         imgUrl: target.imgUrl.value,
                     };
 
@@ -127,6 +141,29 @@ const ProductChangeComponent = observer((): JSX.Element => {
                     />
                 </div>
                 <div className="mb-3 w-50 mx-auto">
+                    <label className="form-label fs-4">Product type</label>
+                    <select
+                        className="form-select"
+                        defaultValue={product?.productType}
+                        required
+                        name="productType"
+                    >
+                        <option disabled value="">
+                            Choose...
+                        </option>
+                        {productTypes.map((productType) => {
+                            return (
+                                <option
+                                    key={productType.id}
+                                    value={productType.title}
+                                >
+                                    {productType.title}
+                                </option>
+                            );
+                        })}
+                    </select>
+                </div>
+                <div className="mb-3 w-50 mx-auto">
                     <label className="form-label fs-4">Img url</label>
                     <input
                         type="text"
@@ -136,7 +173,6 @@ const ProductChangeComponent = observer((): JSX.Element => {
                         defaultValue={product?.imgUrl}
                     />
                 </div>
-
                 <div className="text-center">
                     <button type="submit" className="btn btn-primary">
                         Save changes

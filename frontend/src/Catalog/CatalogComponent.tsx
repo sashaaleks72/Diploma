@@ -10,10 +10,14 @@ type Props = {
 };
 
 const CatalogComponent = observer((props: Props): JSX.Element => {
-    const [sortParams, setSortParams] = useState<string>();
+    const [sortParams, setSortParams] = useState<string>("");
     const [header, setHeader] = useState<string>("Some title");
     const [page, setPage] = useState<number>(1);
     const limit = 6;
+
+    useEffect(() => {
+        setPage(1);
+    }, [props.productType]);
 
     useEffect(() => {
         const init = async () => {
@@ -39,10 +43,6 @@ const CatalogComponent = observer((props: Props): JSX.Element => {
         }
     }, [props.productType, sortParams, page]);
 
-    useEffect(() => {
-        setPage(1);
-    }, [props.productType]);
-
     const previousPage = () => {
         if (page > 1) {
             setPage(page - 1);
@@ -61,6 +61,7 @@ const CatalogComponent = observer((props: Props): JSX.Element => {
                 className="form-select w-25 mb-3"
                 aria-label="Default select example"
                 onChange={(e) => setSortParams(e.target.value)}
+                value={sortParams}
             >
                 <option disabled value="">
                     Sorting

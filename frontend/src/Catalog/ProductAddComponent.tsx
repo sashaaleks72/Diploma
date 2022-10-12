@@ -2,11 +2,14 @@ import { observer } from "mobx-react-lite";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { catalog } from "../App";
+import CatalogItemDto from "../dtos/CatalogItemDto";
 import ProductDto from "../dtos/ProductDto";
-import { addNewProduct } from "../http/fetches";
+import { addNewProduct, getCatalogItems } from "../http/fetches";
 
 const ProductAddComponent = observer((): JSX.Element => {
     const [product, setProduct] = useState<ProductDto>();
+    const [productTypes, setProductTypes] = useState<CatalogItemDto[]>([]);
+
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -20,6 +23,16 @@ const ProductAddComponent = observer((): JSX.Element => {
 
         init();
     }, [product]);
+
+    useEffect(() => {
+        const setProductTypesStateFromResponse = async () => {
+            const productTypesFromResponse: CatalogItemDto[] =
+                await getCatalogItems();
+            setProductTypes(productTypesFromResponse);
+        };
+
+        setProductTypesStateFromResponse();
+    }, []);
 
     return (
         <div>
@@ -36,6 +49,7 @@ const ProductAddComponent = observer((): JSX.Element => {
                         warrantyInMonths: { value: number };
                         capacity: { value: number };
                         description: { value: string };
+                        productType: { value: string };
                         imgUrl: { value: string };
                     };
 
@@ -48,6 +62,7 @@ const ProductAddComponent = observer((): JSX.Element => {
                         warrantyInMonths: target.warrantyInMonths.value,
                         capacity: target.capacity.value,
                         description: target.description.value,
+                        productType: target.productType.value,
                         imgUrl: target.imgUrl.value,
                     };
 
@@ -118,6 +133,29 @@ const ProductAddComponent = observer((): JSX.Element => {
                         name="description"
                         required
                     />
+                </div>
+                <div className="mb-3 w-50 mx-auto">
+                    <label className="form-label fs-4">Product type</label>
+                    <select
+                        className="form-select"
+                        defaultValue=""
+                        required
+                        name="productType"
+                    >
+                        <option disabled value="">
+                            Choose...
+                        </option>
+                        {productTypes.map((productType) => {
+                            return (
+                                <option
+                                    key={productType.id}
+                                    value={productType.title}
+                                >
+                                    {productType.title}
+                                </option>
+                            );
+                        })}
+                    </select>
                 </div>
                 <div className="mb-3 w-50 mx-auto">
                     <label className="form-label fs-4">Img url</label>

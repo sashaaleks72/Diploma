@@ -29,12 +29,12 @@ const App = observer(() => {
                     <Route path="/catalog" element={<CatalogMainComponent />} />
                     <Route
                         path="/catalog/teapots"
-                        element={<CatalogComponent productType="teapots" />}
+                        element={<CatalogComponent productType="Teapots" />}
                     />
                     <Route
                         path="/catalog/coffee-machines"
                         element={
-                            <CatalogComponent productType="coffee-machines" />
+                            <CatalogComponent productType="Coffee machines" />
                         }
                     />
                     <Route path="/catalog/:id" element={<ProductComponent />} />
@@ -66,7 +66,10 @@ const App = observer(() => {
                     <Route path="/register" element={<SignUpComponent />} />
                     <Route path="/profile" element={<ProfileComponent />} />
                     <Route path="/my-orders" element={<OrdersComponent />} />
-                    <Route path="/make-an-order" element={<MakeAnOrderComponent />} />
+                    <Route
+                        path="/make-an-order"
+                        element={<MakeAnOrderComponent />}
+                    />
                     <Route
                         path="*"
                         element={<Navigate replace to="/catalog" />}

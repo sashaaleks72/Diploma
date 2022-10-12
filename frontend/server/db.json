@@ -55,7 +55,7 @@
             "cartItems": [
                 {
                     "id": "688afdf3-18ce-4851-9611-2caaa97fedab",
-                    "title": "Teapot 2",y
+                    "title": "Teapot 2",
                     "quantity": 2,
                     "imgUrl": "https://content1.rozetka.com.ua/goods/images/big_tile/64732971.jpg",
                     "price": 1189
@@ -143,7 +143,7 @@
             "manufacturerCountry": "China",
             "capacity": 12,
             "warrantyInMonths": 12,
-            "productType": "teapots"
+            "productType": "Teapots"
         },
         {
             "id": "688afdf3-18ce-4851-9611-2caaa97fedab",
@@ -155,7 +155,7 @@
             "manufacturerCountry": "China",
             "capacity": 12,
             "warrantyInMonths": 12,
-            "productType": "teapots"
+            "productType": "Teapots"
         },
         {
             "id": "0c0b4f1c-5387-4301-a427-947b41c6201d",
@@ -167,7 +167,7 @@
             "manufacturerCountry": "China",
             "capacity": 12,
             "warrantyInMonths": 12,
-            "productType": "teapots"
+            "productType": "Teapots"
         },
         {
             "id": "109bc25c-895b-42c1-b530-e753bc06eebc",
@@ -179,7 +179,7 @@
             "manufacturerCountry": "China",
             "capacity": 12,
             "warrantyInMonths": 12,
-            "productType": "teapots"
+            "productType": "Teapots"
         },
         {
             "id": "2b2ecd80-c8a1-4faa-a357-11472b358a6d",
@@ -191,7 +191,7 @@
             "manufacturerCountry": "China",
             "capacity": 12,
             "warrantyInMonths": 12,
-            "productType": "teapots"
+            "productType": "Teapots"
         },
         {
             "id": "4a1af03e-7ee7-4a67-83a3-4da8de5a3b5e",
@@ -203,7 +203,7 @@
             "manufacturerCountry": "China",
             "capacity": 12,
             "warrantyInMonths": 12,
-            "productType": "teapots"
+            "productType": "Teapots"
         },
         {
             "id": "7cb8ad11-142d-4493-b576-bff83b638b0f",
@@ -215,7 +215,7 @@
             "manufacturerCountry": "China",
             "capacity": 12,
             "warrantyInMonths": 12,
-            "productType": "teapots"
+            "productType": "Teapots"
         },
         {
             "id": "60d242a2-0f63-49fd-bb8e-7ca1abd8a50f",
@@ -227,7 +227,7 @@
             "manufacturerCountry": "China",
             "capacity": 12,
             "warrantyInMonths": 12,
-            "productType": "teapots"
+            "productType": "Teapots"
         },
         {
             "id": "f7ed5849-5412-4842-bdc6-a9a73a721264",
@@ -239,7 +239,7 @@
             "manufacturerCountry": "China",
             "capacity": 12,
             "warrantyInMonths": 12,
-            "productType": "teapots"
+            "productType": "Teapots"
         },
         {
             "id": "34882edb-d24f-4963-a73a-ae2556442ef0",
@@ -251,7 +251,7 @@
             "manufacturerCountry": "China",
             "capacity": 12,
             "warrantyInMonths": 12,
-            "productType": "teapots"
+            "productType": "Teapots"
         },
         {
             "id": "f1d40d20-daa4-40cd-9f24-b7ccd28d71db",
@@ -263,7 +263,7 @@
             "manufacturerCountry": "China",
             "capacity": 12,
             "warrantyInMonths": 12,
-            "productType": "teapots"
+            "productType": "Teapots"
         },
         {
             "id": "5f3121a0-002b-42d7-9237-8c3d0d246c83",
@@ -275,7 +275,7 @@
             "manufacturerCountry": "China",
             "capacity": 12,
             "warrantyInMonths": 12,
-            "productType": "teapots"
+            "productType": "Teapots"
         },
         {
             "id": "41773677-ddda-45ff-8d5d-ebee4ce64483",
@@ -287,7 +287,7 @@
             "manufacturerCountry": "China",
             "capacity": 12,
             "warrantyInMonths": 12,
-            "productType": "coffee-machines"
+            "productType": "Coffee machines"
         },
         {
             "id": "5cb75251-5a32-4766-90c1-f25b5b53f987",
@@ -299,7 +299,7 @@
             "manufacturerCountry": "China",
             "capacity": 12,
             "warrantyInMonths": 24,
-            "productType": "coffee-machines"
+            "productType": "Coffee machines"
         },
         {
             "id": "0d76c533-65ba-449c-a3d2-75a9902e0829",
@@ -311,7 +311,7 @@
             "manufacturerCountry": "China",
             "capacity": 12,
             "warrantyInMonths": 18,
-            "productType": "coffee-machines"
+            "productType": "Coffee machines"
         },
         {
             "id": "27d8fbe2-9ab0-4134-adfe-3d74ee5f6b36",
@@ -323,7 +323,7 @@
             "manufacturerCountry": "China",
             "capacity": 12,
             "warrantyInMonths": 12,
-            "productType": "coffee-machines"
+            "productType": "Coffee machines"
         },
         {
             "id": "ae6e6455-ae16-44f9-83c0-5c03712421bf",
@@ -335,7 +335,7 @@
             "manufacturerCountry": "China",
             "capacity": 12,
             "warrantyInMonths": 6,
-            "productType": "coffee-machines"
+            "productType": "Coffee machines"
         },
         {
             "id": "63224a0b-dd82-443d-bdf6-3509e43d8132",
@@ -347,7 +347,7 @@
             "manufacturerCountry": "China",
             "capacity": 12,
             "warrantyInMonths": 30,
-            "productType": "coffee-machines"
+            "productType": "Coffee machines"
         },
         {
             "id": "0e54fbd4-fdf0-4b75-8332-d6d3dcb971dd",
@@ -371,7 +371,7 @@
             "manufacturerCountry": "China",
             "capacity": 12,
             "warrantyInMonths": 6,
-            "productType": "coffee-machines"
+            "productType": "Coffee machines"
         },
         {
             "id": "bed055de-7103-443f-9c5e-286398386a54",
@@ -383,7 +383,7 @@
             "manufacturerCountry": "China",
             "capacity": 12,
             "warrantyInMonths": 24,
-            "productType": "coffee-machines"
+            "productType": "Coffee machines"
         },
         {
             "id": "00f5895f-1a8f-4025-8405-6147570ca8e2",
@@ -395,7 +395,7 @@
             "manufacturerCountry": "China",
             "capacity": 12,
             "warrantyInMonths": 12,
-            "productType": "coffee-machines"
+            "productType": "Coffee machines"
         }
     ]
 }

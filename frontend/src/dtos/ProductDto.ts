@@ -8,6 +8,7 @@ interface ProductDto {
     manufacturerCountry: string;
     capacity: number;
     warrantyInMonths: number;
+    productType: string;
 }
 
 export default ProductDto;
