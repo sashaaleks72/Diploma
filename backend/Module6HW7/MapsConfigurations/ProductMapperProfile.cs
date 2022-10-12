@@ -16,15 +16,15 @@ namespace Module6HW7.MapsConfigurations
                            options => options.MapFrom(source => source.Catalog.Title));
 
             CreateMap<ProductViewModel, Product>()
-                .AfterMap<DbAction>();
+                .AfterMap<DbSetCatalogMappingAction>();
         }
     }
 
-    public class DbAction : IMappingAction<ProductViewModel, Product>
+    public class DbSetCatalogMappingAction : IMappingAction<ProductViewModel, Product>
     {
         private readonly ApplicationDbContext _dbContext;
 
-        public DbAction(ApplicationDbContext dbContext)
+        public DbSetCatalogMappingAction(ApplicationDbContext dbContext)
         {
             _dbContext = dbContext;
         }

@@ -56,6 +56,8 @@ namespace Module6HW7
             services.AddTransient<IProductService, ProductService>();
             services.AddTransient<ICatalogDataProvider, CatalogDataProvider>();
             services.AddTransient<ICatalogService, CatalogService>();
+            services.AddTransient<IOrderDataProvider, OrderDataProvider>();
+            services.AddTransient<IOrderService, OrderService>();
             services.AddAutoMapper(typeof(Startup));
             services.AddSwaggerGen(c =>
             {

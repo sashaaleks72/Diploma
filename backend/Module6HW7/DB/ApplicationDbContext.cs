@@ -7,6 +7,9 @@ namespace Module6HW7.DB
     {
         public DbSet<Product> Products { get; set; }
         public DbSet<Catalog> CatalogItems { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderStatus> OrderStatuses { get; set; }
+        public DbSet<OrderProduct> OrderProducts { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options): base(options) {
             // Database.EnsureCreated();
@@ -14,6 +17,38 @@ namespace Module6HW7.DB
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<OrderStatus>().HasData(
+                new OrderStatus
+                {
+                    Id = 1,
+                    Title = "Awaiting confirmation"
+                },
+                new OrderStatus
+                {
+                    Id = 2,
+                    Title = "Accepted"
+                },
+                new OrderStatus
+                {
+                    Id = 3,
+                    Title = "Packing"
+                },
+                new OrderStatus
+                {
+                    Id = 4,
+                    Title = "In delivery"
+                },
+                new OrderStatus
+                {
+                    Id = 5,
+                    Title = "Deliveried"
+                },
+                new OrderStatus
+                {
+                    Id = 6,
+                    Title = "Declined"
+                });
+
             modelBuilder.Entity<Catalog>().HasData(
                 new Catalog
                 {

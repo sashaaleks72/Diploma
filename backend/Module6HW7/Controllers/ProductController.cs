@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Module6HW7.Exceptions;
 using Module6HW7.Interfaces;
 using Module6HW7.Models;
+using Module6HW7.ResponseModels;
 using Module6HW7.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -38,23 +39,23 @@ namespace Module6HW7.Controllers
             }
 
             return Ok(products);
-        }
+        } 
 
         [HttpGet("products/{id}")]
         public async Task<IActionResult> GetProductById([FromRoute] Guid id)
         {
-            Product product = null;
+            ProductResponse responseProduct = null;
 
             try
             {
-                product = await _productService.GetProductById(id);
+                responseProduct = _mapper.Map<Product, ProductResponse>(await _productService.GetProductById(id));
             }
             catch (BusinessException ex)
             {
                 return NotFound(new { ex.Message });
             }
 
-            return Ok(product);
+            return Ok(responseProduct);
         }
 
         [HttpPost("products")]
