@@ -10,9 +10,11 @@ type Props = {
 };
 
 const CatalogComponent = observer((props: Props): JSX.Element => {
-    const [sortParams, setSortParams] = useState<string>("");
+    const [sortParams, setSortParams] = useState<string>("title:asc");
     const [header, setHeader] = useState<string>("Some title");
     const [page, setPage] = useState<number>(1);
+    const [totalQuanOfProducts, setTotalQuanOfProducts] = useState<number>(0);
+
     const limit = 6;
 
     useEffect(() => {
@@ -21,14 +23,17 @@ const CatalogComponent = observer((props: Props): JSX.Element => {
 
     useEffect(() => {
         const init = async () => {
+            const totalQuantityOfProds: number = (
+                await getProducts(props.productType)
+            ).length;
+            setTotalQuanOfProducts(totalQuantityOfProds);
+
             const products: ProductDto[] = await getProducts(
                 props.productType,
                 sortParams,
                 page,
                 limit
             );
-
-            if (!products.length) setPage(page - 1);
 
             catalog.setProductList(products);
         };
@@ -50,7 +55,15 @@ const CatalogComponent = observer((props: Props): JSX.Element => {
     };
 
     const nextPage = () => {
-        setPage(page + 1);
+        const totalPages: number = getTotalPages();
+
+        if (page < totalPages) setPage(page + 1);
+    };
+
+    const getTotalPages = (): number => {
+        const totalPages: number = Math.ceil(totalQuanOfProducts / limit);
+
+        return totalPages;
     };
 
     return (

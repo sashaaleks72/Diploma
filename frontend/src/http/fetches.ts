@@ -40,9 +40,9 @@ export const getCatalogItems = async (): Promise<CatalogItemDto[]> => {
 
 export const getProducts = async (
     productType: string,
-    sortParams?: string,
-    page?: number,
-    limit?: number
+    sortParams: string = "",
+    page: number = 0,
+    limit: number = 0
 ): Promise<ProductDto[]> => {
     let [fieldForSort, howToSort]: string[] = [];
 
