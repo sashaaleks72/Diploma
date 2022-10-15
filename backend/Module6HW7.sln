@@ -5,6 +5,8 @@ VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Module6HW7", "Module6HW7\Module6HW7.csproj", "{DB6046F6-7D54-4509-B13C-1EEC1B53788A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diploma.IdentityServer", "Diploma.IdentityServer\Diploma.IdentityServer.csproj", "{FE848B05-D119-489F-A968-44D1A77E9DDE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,10 +17,10 @@ Global
 		{DB6046F6-7D54-4509-B13C-1EEC1B53788A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB6046F6-7D54-4509-B13C-1EEC1B53788A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB6046F6-7D54-4509-B13C-1EEC1B53788A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{045C3B4D-9885-4C6D-8BC1-41525AB62E0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{045C3B4D-9885-4C6D-8BC1-41525AB62E0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{045C3B4D-9885-4C6D-8BC1-41525AB62E0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{045C3B4D-9885-4C6D-8BC1-41525AB62E0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE848B05-D119-489F-A968-44D1A77E9DDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE848B05-D119-489F-A968-44D1A77E9DDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE848B05-D119-489F-A968-44D1A77E9DDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE848B05-D119-489F-A968-44D1A77E9DDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
