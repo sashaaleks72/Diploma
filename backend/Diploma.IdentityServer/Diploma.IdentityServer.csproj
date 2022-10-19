@@ -13,7 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Module6HW7\Module6HW7.csproj" />
+    <ProjectReference Include="..\Diploma\Diploma.csproj" />
+    <ProjectReference Include="..\Module6HW7\Diploma.csproj" />
   </ItemGroup>
 
 </Project>

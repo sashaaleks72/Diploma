@@ -1,7 +1,7 @@
 ﻿using Diploma.IdentityServer.DB;
 using IdentityServer4.Models;
 using IdentityServer4.Validation;
-using Module6HW7.Services;
+using Diploma.Services;
 
 namespace Diploma.IdentityServer.Services
 {
