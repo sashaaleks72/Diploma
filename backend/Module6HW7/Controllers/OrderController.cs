@@ -1,13 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Module6HW7.Exceptions;
 using Module6HW7.Interfaces;
 using Module6HW7.ResponseModels;
 using Module6HW7.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Module6HW7.Controllers
 {
+    [Authorize]
     [Route("api")]
     [ApiController]
     public class OrderController : ControllerBase
@@ -30,13 +33,13 @@ namespace Module6HW7.Controllers
         }
 
         [HttpGet("orders")]
-        public async Task<IActionResult> GetOrders()
+        public async Task<IActionResult> GetOrders([FromQuery] Guid userId)
         {
             List<OrderResponse> ordersResponse = null;
 
             try
             {
-                ordersResponse = await _orderService.GetOrders();
+                ordersResponse = await _orderService.GetOrders(userId);
             }
             catch (BusinessException ex)
             {

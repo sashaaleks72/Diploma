@@ -21,9 +21,19 @@ namespace Module6HW7.Services
             _mapper = mapper;
         }
 
-        public async Task<List<OrderResponse>> GetOrders()
+        public async Task<List<OrderResponse>> GetOrders(Guid userId)
         {
-            var orders= await _dataProvider.GetOrders();
+            List<Order> orders = null;
+
+            if (userId.Equals(Guid.Empty))
+            {
+                orders = await _dataProvider.GetOrders();
+            }
+            else
+            {
+                orders = await _dataProvider.GetOrders(userId);
+            }
+             
             var ordersResponse = new List<OrderResponse>();
             List<OrderProduct> orderProducts = null;
 

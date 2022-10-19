@@ -2,6 +2,7 @@
 using Module6HW7.DB;
 using Module6HW7.Interfaces;
 using Module6HW7.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -43,6 +44,13 @@ namespace Module6HW7.Providers
         public async Task<List<Order>> GetOrders()
         {
             var orders = await _dbContext.Orders.ToListAsync();
+
+            return orders;
+        }
+
+        public async Task<List<Order>> GetOrders(Guid userId)
+        {
+            var orders = await _dbContext.Orders.Where(o => o.UserId == userId).ToListAsync();
 
             return orders;
         }

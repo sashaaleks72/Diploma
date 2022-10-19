@@ -22,5 +22,7 @@ namespace Module6HW7.ViewModels
         public List<CartItemViewModel> CartItems { get; set; }
 
         public double TotalSum { get; set; }
+
+        public Guid UserId { get; set; }
     }
 }

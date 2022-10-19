@@ -1,4 +1,5 @@
 ﻿using Module6HW7.Models;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -11,6 +12,8 @@ namespace Module6HW7.Interfaces
         public Task<bool> AddOrder(Order order);
 
         public Task<List<Order>> GetOrders();
+
+        public Task<List<Order>> GetOrders(Guid userId);
 
         public Task<List<OrderProduct>> GetOrderProductsByOrderId(int orderId);
     }

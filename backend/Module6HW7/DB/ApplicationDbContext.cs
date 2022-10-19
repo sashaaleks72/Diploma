@@ -19,6 +19,18 @@ namespace Module6HW7.DB
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Role>().HasData(
+                new Role
+                {
+                    Id = 1,
+                    Title = "Client"
+                },
+                new Role
+                {
+                    Id = 2,
+                    Title = "Admin"
+                });
+
             modelBuilder.Entity<OrderStatus>().HasData(
                 new OrderStatus
                 {

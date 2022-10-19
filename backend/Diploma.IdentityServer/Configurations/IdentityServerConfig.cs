@@ -17,7 +17,19 @@ namespace Diploma.IdentityServer.Configurations
             return new List<Client> {
                 new Client
                 {
-                    AccessTokenLifetime = 18000,
+                    AllowedCorsOrigins = { "https://localhost:44374" },
+                    AccessTokenLifetime = 1800,
+                    AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
+                    ClientId = "swagger_login",
+                    ClientSecrets = { new Secret("swagger_pass".Sha256())},
+                    AllowedScopes =
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId
+                    }
+                },
+                new Client
+                {
+                    AccessTokenLifetime = 1800,
                     AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
                     ClientId = "react_login",
                     ClientSecrets = { new Secret("react_pass".Sha256())},

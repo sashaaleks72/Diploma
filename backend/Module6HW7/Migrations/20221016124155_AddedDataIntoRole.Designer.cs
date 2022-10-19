@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Module6HW7.DB;
 
@@ -11,9 +12,10 @@ using Module6HW7.DB;
 namespace Module6HW7.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221016124155_AddedDataIntoRole")]
+    partial class AddedDataIntoRole
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -98,14 +100,9 @@ namespace Module6HW7.Migrations
                     b.Property<double>("TotalSum")
                         .HasColumnType("float");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("Id");
 
                     b.HasIndex("OrderStatusId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Orders");
                 });
@@ -229,7 +226,7 @@ namespace Module6HW7.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("f07aaaf1-9034-44ad-85de-57c60b9fd30e"),
+                            Id = new Guid("e900a932-5281-4913-96c2-fb77765296c2"),
                             Capacity = 1.7,
                             CatalogId = 1,
                             Description = "Safety in 3 dimensions: automatic shutdown, protection against leakage and overheating, LED indication.",
@@ -242,7 +239,7 @@ namespace Module6HW7.Migrations
                         },
                         new
                         {
-                            Id = new Guid("91579720-12b6-44a8-86c6-8ddc7ab6846b"),
+                            Id = new Guid("d1e161a7-c7df-4b44-bf82-2a6949a64aa5"),
                             Capacity = 1.7,
                             CatalogId = 1,
                             Description = "Inspired by traditional British ceramics, the Loft teapot's stunning fluted lines are elegantly paired with modern chrome accents for a timeless design that looks great in any kitchen.",
@@ -255,7 +252,7 @@ namespace Module6HW7.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f15c03c0-01f9-44e1-9f14-fdff72ffcf7a"),
+                            Id = new Guid("5c4402a9-370c-4fd9-95fb-56d5a93539d4"),
                             Capacity = 1.7,
                             CatalogId = 1,
                             Description = "Safety in 3 dimensions: automatic shutdown, protection against leakage and overheating, LED indication.",
@@ -268,7 +265,7 @@ namespace Module6HW7.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0d542238-0835-4595-a677-c361df0f12f2"),
+                            Id = new Guid("661d38cc-9621-4621-92da-be16ecafc3ae"),
                             Capacity = 1.7,
                             CatalogId = 1,
                             Description = "Prepare hot drinks in no time with 2200W of power",
@@ -281,7 +278,7 @@ namespace Module6HW7.Migrations
                         },
                         new
                         {
-                            Id = new Guid("4d0ba9ef-5a12-4aa2-8fc1-2faa82120b6b"),
+                            Id = new Guid("3ba374f4-29b5-4623-93aa-22682d5712e1"),
                             Capacity = 1.7,
                             CatalogId = 1,
                             Description = "With keep warm function; fast, safe boiling; easy to fill, use and clean",
@@ -294,7 +291,7 @@ namespace Module6HW7.Migrations
                         },
                         new
                         {
-                            Id = new Guid("2afd3692-16bb-4b97-9284-7596d9c1d938"),
+                            Id = new Guid("8cafd3e6-88d5-4e06-8abe-c15dd6952b94"),
                             Capacity = 1.5,
                             CatalogId = 1,
                             Description = "With the AENO EK4 electric kettle, you can boil water in just 5 minutes and have time to prepare tea or coffee for the arrival of guests.",
@@ -307,7 +304,7 @@ namespace Module6HW7.Migrations
                         },
                         new
                         {
-                            Id = new Guid("9db4706e-b92e-448e-919c-c39568457d21"),
+                            Id = new Guid("6f247fba-69f8-4a62-a237-0436eb720e5b"),
                             Capacity = 1.5,
                             CatalogId = 1,
                             Description = "Good teapot",
@@ -320,7 +317,7 @@ namespace Module6HW7.Migrations
                         },
                         new
                         {
-                            Id = new Guid("9d4c9e20-7d6c-4002-8401-8055cdd439ed"),
+                            Id = new Guid("f1b29db5-bfef-4bff-bff7-df421337a977"),
                             Capacity = 1.5,
                             CatalogId = 1,
                             Description = "Good teapot",
@@ -333,7 +330,7 @@ namespace Module6HW7.Migrations
                         },
                         new
                         {
-                            Id = new Guid("5be8eb41-df74-4c62-9468-d9dc3697ec5c"),
+                            Id = new Guid("52a1b939-af1e-4f8c-b81d-c8605a099401"),
                             Capacity = 1.5,
                             CatalogId = 1,
                             Description = "Good teapot",
@@ -346,7 +343,7 @@ namespace Module6HW7.Migrations
                         },
                         new
                         {
-                            Id = new Guid("67f3170c-c25e-4ef4-9d26-68db38d98f10"),
+                            Id = new Guid("911b5956-ceb6-4524-98a7-659b64382fd3"),
                             Capacity = 1.5,
                             CatalogId = 1,
                             Description = "Good teapot",
@@ -359,7 +356,7 @@ namespace Module6HW7.Migrations
                         },
                         new
                         {
-                            Id = new Guid("9e25fb7a-9f90-466a-b515-422023d11107"),
+                            Id = new Guid("98033b4d-249b-4283-847d-02fa4cac939c"),
                             Capacity = 1.5,
                             CatalogId = 1,
                             Description = "Good teapot",
@@ -372,7 +369,7 @@ namespace Module6HW7.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c52e0f08-dc5d-4652-9e78-ee08659f78ca"),
+                            Id = new Guid("1ca8e1c0-e4b1-4930-95fb-55b1bae542c5"),
                             Capacity = 1.5,
                             CatalogId = 1,
                             Description = "Good teapot",
@@ -385,7 +382,7 @@ namespace Module6HW7.Migrations
                         },
                         new
                         {
-                            Id = new Guid("5e99667f-d035-4f0b-bef8-e97d86bc454f"),
+                            Id = new Guid("10986208-0cec-4e01-a289-bb72558337c7"),
                             Capacity = 12.0,
                             CatalogId = 2,
                             Description = "Good teapot",
@@ -398,7 +395,7 @@ namespace Module6HW7.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ff989a51-3e96-4afa-b57f-f1e907c0a9d9"),
+                            Id = new Guid("9c5923d1-5860-41ff-bd54-61f061330ded"),
                             Capacity = 12.0,
                             CatalogId = 2,
                             Description = "Good teapot",
@@ -411,7 +408,7 @@ namespace Module6HW7.Migrations
                         },
                         new
                         {
-                            Id = new Guid("06a77f8c-bd27-4c5c-acd9-3bfc94e23c50"),
+                            Id = new Guid("86494e0d-1c49-4015-a075-bac33787e052"),
                             Capacity = 12.0,
                             CatalogId = 2,
                             Description = "Good teapot",
@@ -424,7 +421,7 @@ namespace Module6HW7.Migrations
                         },
                         new
                         {
-                            Id = new Guid("2a265306-3480-443f-b0f3-e4f8a748f6ca"),
+                            Id = new Guid("8617ed2a-aa41-4196-9101-32f935dd80ac"),
                             Capacity = 12.0,
                             CatalogId = 2,
                             Description = "Good teapot",
@@ -437,7 +434,7 @@ namespace Module6HW7.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c3939574-9260-411d-94ae-6d227845f43f"),
+                            Id = new Guid("73664369-93e0-456e-9001-ccfce94ee2bf"),
                             Capacity = 12.0,
                             CatalogId = 2,
                             Description = "Good teapot",
@@ -450,7 +447,7 @@ namespace Module6HW7.Migrations
                         },
                         new
                         {
-                            Id = new Guid("60fb3b2a-49ed-4cff-b45b-fc20f3d8fc3e"),
+                            Id = new Guid("28d0a3b6-a9ca-4148-b6e2-2d350e667bb0"),
                             Capacity = 12.0,
                             CatalogId = 2,
                             Description = "Good teapot",
@@ -463,7 +460,7 @@ namespace Module6HW7.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0248fe94-662e-419d-b069-7631c0938fba"),
+                            Id = new Guid("75080511-d50d-48ed-aae2-a41a915aaff5"),
                             Capacity = 12.0,
                             CatalogId = 2,
                             Description = "Good teapot",
@@ -476,7 +473,7 @@ namespace Module6HW7.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c104f203-0d63-42b2-8601-dccbcde2ba74"),
+                            Id = new Guid("4b2b63f7-7c45-4fb8-a8f2-c9ed9e899a6a"),
                             Capacity = 12.0,
                             CatalogId = 2,
                             Description = "Good teapot",
@@ -489,7 +486,7 @@ namespace Module6HW7.Migrations
                         },
                         new
                         {
-                            Id = new Guid("42d8e4ad-c170-4f6c-921e-57c489a3e3d1"),
+                            Id = new Guid("9d93d157-6d09-46f5-83d6-6a41f33f86b6"),
                             Capacity = 12.0,
                             CatalogId = 2,
                             Description = "Good teapot",
@@ -502,7 +499,7 @@ namespace Module6HW7.Migrations
                         },
                         new
                         {
-                            Id = new Guid("d00e8174-be1b-43c8-b5a1-78a96f13e1d6"),
+                            Id = new Guid("8bce9497-fa27-4efd-8bec-c95bc5d76aaf"),
                             Capacity = 12.0,
                             CatalogId = 2,
                             Description = "Good teapot",
@@ -585,15 +582,7 @@ namespace Module6HW7.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Module6HW7.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("OrderStatus");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Module6HW7.Models.OrderProduct", b =>

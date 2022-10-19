@@ -26,5 +26,8 @@ namespace Module6HW7.Models
 
         public virtual OrderStatus OrderStatus { get; set; }
         public int OrderStatusId { get; set; }
+
+        public virtual User User { get; set; }
+        public Guid UserId { get; set; }
     }
 }
