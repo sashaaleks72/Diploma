@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { user } from "../App";
 import { editProfile, getProfile } from "../http/fetches";
 import ProfileModel from "../models/ProfileModel";
 
@@ -94,7 +95,7 @@ const ProfileComponent = (): JSX.Element => {
 
     useEffect(() => {
         const init = async () => {
-            const profileFromResponse = await getProfile("ES9zC9J");
+            const profileFromResponse = await getProfile(user.user.id);
             setValidationProfile(profileFromResponse);
         };
 
@@ -103,7 +104,10 @@ const ProfileComponent = (): JSX.Element => {
 
     useEffect(() => {
         const init = async () => {
-            if (profile != undefined) await editProfile("ES9zC9J", profile);
+            if (profile != undefined) {
+                await editProfile(user.user.id, profile);
+                user.editUser(profile);
+            }
         };
 
         init();
@@ -115,8 +119,6 @@ const ProfileComponent = (): JSX.Element => {
             <form
                 onSubmit={(e) => {
                     e.preventDefault();
-
-                    console.log("hello");
 
                     const target = e.target as typeof e.target & {
                         firstName: { value: string };

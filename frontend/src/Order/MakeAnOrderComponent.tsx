@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { cart } from "../App";
+import { cart, user } from "../App";
 import { getDepartments, makeAnOrder } from "../http/fetches";
 import OrderModel from "../models/OrderModel";
 
@@ -98,6 +98,7 @@ const MakeAnOrderComponent = (): JSX.Element => {
                         orderStatus: "Waiting for accept",
                         orderDate: `${currentDate.getDate()}.${currentDate.getMonth()}.${currentDate.getFullYear()}`,
                         totalSum: cart.totalSum,
+                        userId: user.user.id,
                     };
 
                     setOrder(orderModel);
@@ -149,6 +150,7 @@ const MakeAnOrderComponent = (): JSX.Element => {
                     <div className="">
                         <label className="form-label">First name</label>
                         <input
+                            defaultValue={user.user.firstName}
                             type="text"
                             name="firstName"
                             className="form-control"
@@ -159,6 +161,7 @@ const MakeAnOrderComponent = (): JSX.Element => {
                     <div className="mt-2">
                         <label className="form-label">Last name</label>
                         <input
+                            defaultValue={user.user.lastName}
                             type="text"
                             name="lastName"
                             className="form-control"
@@ -170,6 +173,7 @@ const MakeAnOrderComponent = (): JSX.Element => {
                     <div className="mt-2">
                         <label className="form-label">Patronymic</label>
                         <input
+                            defaultValue={user.user.patronymic}
                             type="text"
                             name="patronymic"
                             className="form-control"
@@ -181,6 +185,7 @@ const MakeAnOrderComponent = (): JSX.Element => {
                     <div className="mt-2">
                         <label className="form-label">Email</label>
                         <input
+                            defaultValue={user.user.email}
                             type="email"
                             name="email"
                             className="form-control"

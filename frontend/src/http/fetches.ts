@@ -1,10 +1,14 @@
+import { user } from "../App";
 import CatalogItemDto from "../dtos/CatalogItemDto";
 import ProductDto from "../dtos/ProductDto";
+import AuthModel from "../models/AuthModel";
+import ErrorModel from "../models/ErrorModel";
 import OrderModel from "../models/OrderModel";
 import ProfileModel from "../models/ProfileModel";
+import SignInModel from "../models/SignInModel";
 import SignUpModel from "../models/SignUpModel";
+import UserModel from "../models/UserModel";
 
-// const apiUrl = "http://localhost:5000";
 const apiUrl = "https://localhost:44374/api";
 
 export const makeAnOrder = async (order: OrderModel): Promise<any> => {
@@ -12,6 +16,7 @@ export const makeAnOrder = async (order: OrderModel): Promise<any> => {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
         body: JSON.stringify(order),
     };
@@ -19,8 +24,19 @@ export const makeAnOrder = async (order: OrderModel): Promise<any> => {
     await fetch(`${apiUrl}/orders`, requestOptions);
 };
 
-export const getUserOrders = async (): Promise<OrderModel[]> => {
-    const result: Response = await fetch(`${apiUrl}/orders`);
+export const getUserOrders = async (userId: string): Promise<OrderModel[]> => {
+    const requestOptions = {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+    };
+
+    const result: Response = await fetch(
+        `${apiUrl}/orders?userId=${userId}`,
+        requestOptions
+    );
 
     const response = await result.json();
 
@@ -96,7 +112,7 @@ export const addNewProduct = async (product: ProductDto): Promise<any> => {
     await fetch(`${apiUrl}/products`, requestOptions);
 };
 
-export const signUp = async (signUpModel: SignUpModel): Promise<any> => {
+export const signUp = async (signUpModel: SignUpModel): Promise<AuthModel | ErrorModel> => {
     const requestOptions = {
         method: "POST",
         headers: {
@@ -105,8 +121,25 @@ export const signUp = async (signUpModel: SignUpModel): Promise<any> => {
         body: JSON.stringify(signUpModel),
     };
 
-    //await fetch(`${apiUrl}/sign-up`, requestOptions);
-    await fetch(`${apiUrl}/users`, requestOptions);
+    let result: Response = await fetch(`${apiUrl}/sign-up`, requestOptions);
+    let response: AuthModel | ErrorModel = await result.json();
+
+    return response;
+};
+
+export const signIn = async (signInModel: SignInModel): Promise<AuthModel | ErrorModel> => {
+    const requestOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(signInModel),
+    };
+
+    let result: Response = await fetch(`${apiUrl}/sign-in`, requestOptions);
+    let response: AuthModel | ErrorModel = await result.json();
+
+    return response;
 };
 
 export const editProfile = async (
@@ -117,16 +150,27 @@ export const editProfile = async (
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
         body: JSON.stringify(profileModel),
     };
 
-    //await fetch(`${apiUrl}/sign-up`, requestOptions);
     await fetch(`${apiUrl}/users/${id}`, requestOptions);
 };
 
 export const getProfile = async (id: string): Promise<any> => {
-    const result: Response = await fetch(`${apiUrl}/users/${id}`);
+    const requestOptions = {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+    };
+
+    const result: Response = await fetch(
+        `${apiUrl}/users/${id}`,
+        requestOptions
+    );
     const response: ProfileModel = await result.json();
 
     const profile: ProfileModel = response;

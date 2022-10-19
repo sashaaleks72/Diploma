@@ -4,13 +4,14 @@ import shoppingCart from "../images/icons/shopping-bag.svg";
 import auth from "../images/icons/auth.svg";
 import authenticated from "../images/icons/authenticated.svg";
 import { useEffect, useState } from "react";
+import { observer } from "mobx-react-lite";
+import { user } from "../App";
+import { Button } from "react-bootstrap";
+import SignInComponent from "../Auth/SignInComponent";
 
-const HeaderComponent = (): JSX.Element => {
-    const [isAuthenticated, setAuthState] = useState<boolean>(false);
-
-    useEffect(() => {
-        setAuthState(false);
-    }, []);
+const HeaderComponent = observer((): JSX.Element => {
+    const [isSignInModalDisplayed, setSignInModalDisplayed] =
+        useState<boolean>(false);
 
     return (
         <nav className="navbar navbar-expand-lg bg-light">
@@ -62,7 +63,7 @@ const HeaderComponent = (): JSX.Element => {
                                 </li>
                             </ul>
                         </li>
-                        {isAuthenticated && (
+                        {user.isAuth && (
                             <Link to="/my-orders" className="del_underline">
                                 <div className="nav-link" aria-current="page">
                                     My orders
@@ -71,8 +72,23 @@ const HeaderComponent = (): JSX.Element => {
                         )}
                     </div>
                 </div>
-                {isAuthenticated ? (
-                    <Link className="del_underline" to="/profile">
+
+                {user.isAuth && (
+                    <div
+                        className="nav-link"
+                        onClick={() => {
+                            user.signOut();
+                            user.setAuth(false);
+                        }}
+                        aria-current="page"
+                        role="button"
+                    >
+                        Logout
+                    </div>
+                )}
+
+                {user.isAuth ? (
+                    <Link className="del_underline ms-1" to="/profile">
                         <img
                             src={authenticated}
                             width="25px"
@@ -80,15 +96,17 @@ const HeaderComponent = (): JSX.Element => {
                         ></img>
                     </Link>
                 ) : (
-                    <Link
-                        className="del_underline"
-                        to="#"
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
+                    <div
+                        role="button"
+                        onClick={() => setSignInModalDisplayed(true)}
                     >
                         <img src={auth} width="25px" alt="auth"></img>
-                    </Link>
+                    </div>
                 )}
+                <SignInComponent
+                    show={isSignInModalDisplayed}
+                    setSignInModalDisplayed={(isSignInModalDisplayed: boolean | ((prevState: boolean) => boolean)) => setSignInModalDisplayed(isSignInModalDisplayed)}
+                />
 
                 <Link to="/cart" className="del_underline ms-1">
                     <img
@@ -100,6 +118,6 @@ const HeaderComponent = (): JSX.Element => {
             </div>
         </nav>
     );
-};
+});
 
 export default HeaderComponent;

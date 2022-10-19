@@ -13,6 +13,7 @@ interface OrderModel {
     orderStatus: string;
     id: string;
     totalSum: number;
+    userId: string;
 }
 
 export default OrderModel;

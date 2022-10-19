@@ -1,87 +1,105 @@
-import { useEffect, useState } from "react";
+import { MouseEventHandler, useEffect, useState } from "react";
+import { Button, Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { user } from "../App";
 import SignInModel from "../models/SignInModel";
 
-const SignInComponent = (): JSX.Element => {
+type Props = {
+    show: boolean;
+    setSignInModalDisplayed: any;
+};
+
+const SignInComponent = (props: Props): JSX.Element => {
     const [signInModel, setSignInModel] = useState<SignInModel>();
+    const [signInErrorMessage, setSignInErrorMessage] = useState<string>("");
 
     useEffect(() => {
-        if (signInModel != undefined) console.log(signInModel);
+        const init = async () => {
+            if (signInModel != undefined) {
+                try {
+                    await user.signIn(signInModel);
+                    props.setSignInModalDisplayed(false);
+                } catch (ex) {
+                    let error: string = ex as string;
+                    setSignInErrorMessage(error);
+                }
+            }
+        };
+
+        init();
     }, [signInModel]);
 
     return (
-        <div
-            className="modal fade"
-            id="exampleModal"
-            tab-index="-1"
-            aria-labelledby="exampleModalLabel"
-            aria-hidden="true"
+        <Modal
+            show={props.show}
+            onHide={() => props.setSignInModalDisplayed(false)}
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
         >
-            <div className="modal-dialog modal-dialog-centered">
-                <div className="modal-content">
-                    <div className="modal-header">
-                        <h1 className="modal-title fs-5" id="exampleModalLabel">
-                            Sign In
-                        </h1>
-                        <button
-                            type="button"
-                            className="btn-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                        ></button>
+            <Modal.Header closeButton>
+                <Modal.Title id="contained-modal-title-vcenter">
+                    <h1 className="modal-title fs-5" id="exampleModalLabel">
+                        Sign In
+                    </h1>
+                </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <form
+                    onSubmit={(e) => {
+                        e.preventDefault();
+
+                        const target = e.target as typeof e.target & {
+                            email: { value: string };
+                            pass: { value: string };
+                        };
+
+                        const signInModel: SignInModel = {
+                            email: target.email.value,
+                            pass: target.pass.value,
+                        };
+
+                        setSignInModel(signInModel);
+                    }}
+                >
+                    {signInErrorMessage && (
+                        <div className="text-danger">
+                            * {signInErrorMessage}
+                        </div>
+                    )}
+                    <div className="mb-3">
+                        <label className="form-label">Email address</label>
+                        <input
+                            name="email"
+                            type="email"
+                            className="form-control"
+                            id="exampleInputEmail1"
+                            aria-describedby="emailHelp"
+                            onChange={() => setSignInErrorMessage("")}
+                        />
                     </div>
-                    <div className="modal-body">
-                        <form
-                            onSubmit={(e) => {
-                                e.preventDefault();
-
-                                const target = e.target as typeof e.target & {
-                                    email: { value: string };
-                                    pass: { value: string };
-                                };
-
-                                const signInModel: SignInModel = {
-                                    email: target.email.value,
-                                    pass: target.pass.value,
-                                };
-
-                                setSignInModel(signInModel);
-                            }}
+                    <div className="mb-3">
+                        <label className="form-label">Password</label>
+                        <input
+                            name="pass"
+                            type="password"
+                            className="form-control"
+                            id="exampleInputPassword1"
+                            onChange={() => setSignInErrorMessage("")}
+                        />
+                    </div>
+                    <button type="submit" className="btn btn-primary">
+                        Sign In
+                    </button>
+                    <Link to="/register" style={{ float: "right" }}>
+                        <div
+                            onClick={() => props.setSignInModalDisplayed(false)}
                         >
-                            <div className="mb-3">
-                                <label className="form-label">
-                                    Email address
-                                </label>
-                                <input
-                                    name="email"
-                                    type="email"
-                                    className="form-control"
-                                    id="exampleInputEmail1"
-                                    aria-describedby="emailHelp"
-                                />
-                            </div>
-                            <div className="mb-3">
-                                <label className="form-label">Password</label>
-                                <input
-                                    name="pass"
-                                    type="password"
-                                    className="form-control"
-                                    id="exampleInputPassword1"
-                                />
-                            </div>
-                            <button type="submit" className="btn btn-primary">
-                                Sign In
-                            </button>
-                            <Link to="/register" style={{ float: "right" }}>
-                                <div data-bs-dismiss="modal">
-                                    I am not registered
-                                </div>
-                            </Link>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+                            I am not registered
+                        </div>
+                    </Link>
+                </form>
+            </Modal.Body>
+        </Modal>
     );
 };
 

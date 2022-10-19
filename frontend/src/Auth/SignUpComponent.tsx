@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { signUp } from "../http/fetches";
 import SignUpModel from "../models/SignUpModel";
 import { useNavigate } from "react-router-dom";
+import { user } from "../App";
 
 const SignUpComponent = (): JSX.Element => {
     const navigate = useNavigate();
@@ -35,7 +35,7 @@ const SignUpComponent = (): JSX.Element => {
     const [birthdayErrorMessage, setBirthdayErrorMessage] = useState<string>(
         "The date of birth field can't be empty!"
     );
-
+    const [signUpErrorMessage, setSignUpErrorMessage] = useState<string>("");
     const [confirmPass, setConfirmPass] = useState<string>("");
 
     const onEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -46,6 +46,8 @@ const SignUpComponent = (): JSX.Element => {
             ...signUpValidationModel,
             email: e.target.value,
         });
+
+        setSignUpErrorMessage("");
 
         if (String(e.target.value).toLowerCase().match(re)) {
             setEmailErrorMessage("");
@@ -161,8 +163,13 @@ const SignUpComponent = (): JSX.Element => {
     useEffect(() => {
         const init = async () => {
             if (signUpModel) {
-                await signUp(signUpModel);
-                navigate(-1);
+                try {
+                    await user.signUp(signUpModel);
+                    navigate(-1);
+                } catch (ex) {
+                    let error: string = ex as string;
+                    setSignUpErrorMessage(error);
+                }
             }
         };
 
@@ -172,6 +179,11 @@ const SignUpComponent = (): JSX.Element => {
     return (
         <div>
             <div className="fs-2 text-center mb-2">Sign up</div>
+            {signUpErrorMessage && (
+                <div className="text-danger w-50 mx-auto">
+                    * {signUpErrorMessage}
+                </div>
+            )}
             <form
                 onSubmit={(e) => {
                     e.preventDefault();

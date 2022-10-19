@@ -1,15 +1,17 @@
 import { observer } from "mobx-react-lite";
-import { Link } from "react-router-dom";
-import { cart } from "../App";
+import { Link, useNavigate } from "react-router-dom";
+import { cart, user } from "../App";
 
 type Props = {
     children?: JSX.Element[];
 };
 
 const CartComponent = observer((props: Props): JSX.Element => {
+    const navigation = useNavigate();
+
     return (
         <div>
-            <div className="fs-2 text-center mb-4">Your cart</div>
+            <div className="fs-2 text-center mb-3">Your cart</div>
             {props.children?.length ? (
                 <div>
                     {props.children}
@@ -17,11 +19,21 @@ const CartComponent = observer((props: Props): JSX.Element => {
                         <b>Total sum: </b>
                         {cart.totalSum} UAH
                     </div>
-                    <Link to="/make-an-order">
-                        <div className="btn btn-success float-end">
+
+                    <div className="d-flex justify-content-end">
+                        {!user.isAuth && (
+                            <div className="text-danger mt-1 me-1">
+                                * Please authorize to make an order!
+                            </div>
+                        )}
+                        <button
+                            className="btn btn-success float-end mb-2"
+                            disabled={!user.isAuth}
+                            onClick={() => navigation("/make-an-order")}
+                        >
                             Make an order
-                        </div>
-                    </Link>
+                        </button>
+                    </div>
                 </div>
             ) : (
                 <div className="fs-1 text-center">Cart is empty!</div>

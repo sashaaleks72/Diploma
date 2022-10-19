@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Accordion } from "react-bootstrap";
+import { user } from "../App";
 import { getUserOrders } from "../http/fetches";
 import OrderModel from "../models/OrderModel";
 
@@ -8,7 +9,7 @@ const OrdersComponent = (): JSX.Element => {
 
     useEffect(() => {
         const init = async () => {
-            const ordersFromResponse = await getUserOrders();
+            const ordersFromResponse = await getUserOrders(user.user.id);
 
             if (ordersFromResponse) setOrders(ordersFromResponse);
         };
@@ -19,6 +20,9 @@ const OrdersComponent = (): JSX.Element => {
     return (
         <div>
             <div className="fs-2 text-center mb-2">My orders</div>
+            {!orders?.length && (
+                <div className="fs-1 text-center">You have no orders!</div>
+            )}
             <Accordion>
                 {orders?.map((item, index) => {
                     return (
@@ -42,26 +46,28 @@ const OrdersComponent = (): JSX.Element => {
                                                 overflowY: "auto",
                                             }}
                                         >
-                                            {item.cartItems.map((product) => (
-                                                <div key={product.id}>
-                                                    <img
-                                                        src={product.imgUrl}
-                                                        height="100"
-                                                    />
-                                                    <div>
-                                                        <b>Title: </b>
-                                                        {product.title}
+                                            {item.cartItems.map(
+                                                (product, index) => (
+                                                    <div key={index}>
+                                                        <img
+                                                            src={product.imgUrl}
+                                                            height="100"
+                                                        />
+                                                        <div>
+                                                            <b>Title: </b>
+                                                            {product.title}
+                                                        </div>
+                                                        <div>
+                                                            <b>Quantity: </b>
+                                                            {product.quantity}
+                                                        </div>
+                                                        <div>
+                                                            <b>Price: </b>
+                                                            {product.price} ₴
+                                                        </div>
                                                     </div>
-                                                    <div>
-                                                        <b>Quantity: </b>
-                                                        {product.quantity}
-                                                    </div>
-                                                    <div>
-                                                        <b>Price: </b>
-                                                        {product.price} ₴
-                                                    </div>
-                                                </div>
-                                            ))}
+                                                )
+                                            )}
                                         </div>
                                     </div>
                                     <div className="col-md-5 col-lg-4">
