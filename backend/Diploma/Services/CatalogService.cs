@@ -19,7 +19,7 @@ namespace Diploma.Services
         {
             var catalogItems = await _dataProvider.GetCatalogItems();
 
-            if (catalogItems == null) throw new BusinessException("There are no entries in the table!");
+            if (catalogItems.Count == 0) throw new BusinessException("There are no entries in the table!");
 
             return catalogItems;
         }

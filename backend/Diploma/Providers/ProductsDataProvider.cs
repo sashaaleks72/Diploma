@@ -18,7 +18,7 @@ namespace Diploma.Providers
             _dbContext = dbContext;
         }
 
-        public async Task<List<Product>> GetProducts(string productType, string sort, string order, int page, int limit)
+        public async Task<List<Product>> GetProducts(string productType = null, string sort = null, string order = null, int page = 0, int limit = 0)
         {
             IQueryable<Product> products = _dbContext.Products;
 

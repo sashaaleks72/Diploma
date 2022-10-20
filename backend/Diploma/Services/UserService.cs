@@ -3,11 +3,9 @@ using Diploma.Interfaces;
 using Diploma.Models;
 using Diploma.ResponseModels;
 using Diploma.ViewModels;
-using Newtonsoft.Json;
 using System;
 using System.Net.Http;
 using IdentityModel.Client;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Diploma.Services

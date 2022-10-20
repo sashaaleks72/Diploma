@@ -20,7 +20,7 @@ namespace Diploma.Services
             _mapper = mapper;
         }
 
-        public async Task<List<Product>> GetProducts(string productType, string sort, string order, int page, int limit)
+        public async Task<List<Product>> GetProducts(string productType = null, string sort = null, string order = null, int page = 0, int limit = 0)
         {
             var teapots = await _dataProvider.GetProducts(productType, sort, order, page, limit);
 
