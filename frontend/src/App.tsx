@@ -1,9 +1,7 @@
 import { observer } from "mobx-react-lite";
-import { useEffect } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import ProfileComponent from "./Auth/ProfileComponent";
-import SignInComponent from "./Auth/SignInComponent";
 import SignUpComponent from "./Auth/SignUpComponent";
 import CartComponent from "./Cart/CartComponent";
 import CartItemComponent from "./Cart/CartItemComponent";

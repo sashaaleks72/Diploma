@@ -56,7 +56,7 @@ namespace Diploma
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
                 {
-                    options.Authority = "https://localhost:44382";
+                    options.Authority = "http://host.docker.internal:44382";
                     options.RequireHttpsMetadata = false;
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
@@ -86,7 +86,7 @@ namespace Diploma
                     {
                         Password = new OpenApiOAuthFlow
                         {
-                            TokenUrl = new Uri("https://localhost:44382/connect/token")
+                            TokenUrl = new Uri("http://host.docker.internal:44382/connect/token")
                         }
                     }
                 });
@@ -123,8 +123,6 @@ namespace Diploma
                     c.OAuthClientSecret("swagger_pass");
                 });
             }
-
-            app.UseHttpsRedirection();
 
             app.UseRouting();
 

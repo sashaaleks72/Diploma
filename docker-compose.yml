@@ -1,0 +1,51 @@
+version: '3.4'
+
+services:
+    ms-sql-server:
+        image: mcr.microsoft.com/mssql/server
+        environment:
+            ACCEPT_EULA: "Y"
+            SA_PASSWORD: "QwErTy_12345"
+        ports:
+            - "1433:1433"
+    web-api:
+        build:
+            context: ./backend/Diploma
+        ports:
+            - "44374:44374"
+        environment:
+            DBServer: "ms-sql-server"
+            DBPort: "1433"
+            DBPassword: "QwErTy_12345"
+            DBUser: "SA"
+            DBName: "DiplomaDb"
+            IdentityServerHost: "identity-server"
+    identity-server:
+        build:
+            context: ./backend/Diploma.IdentityServer
+        ports:
+            - "44382:44382"
+        environment:
+            DBServer: "ms-sql-server"
+            DBPort: "1433"
+            DBPassword: "QwErTy_12345"
+            DBUser: "SA"
+            DBName: "DiplomaDb"
+            WebApiHost: "web-api"
+    client:
+        image: frontend:v1
+        build:
+            context: ./frontend
+        ports:
+            - "3000:3000"
+            
+networks:
+    default:
+        driver: bridge
+        internal: false
+        attachable: true
+        ipam:
+            driver: default
+            config:
+                - subnet: 192.168.0.0/24
+                - gateway: 192.168.0.1

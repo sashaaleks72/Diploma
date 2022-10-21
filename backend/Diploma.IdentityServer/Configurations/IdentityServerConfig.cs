@@ -17,7 +17,7 @@ namespace Diploma.IdentityServer.Configurations
             return new List<Client> {
                 new Client
                 {
-                    AllowedCorsOrigins = { "https://localhost:44374" },
+                    AllowedCorsOrigins = { "http://localhost:44374" },
                     AccessTokenLifetime = 1800,
                     AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
                     ClientId = "swagger_login",

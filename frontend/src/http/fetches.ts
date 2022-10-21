@@ -9,7 +9,7 @@ import SignInModel from "../models/SignInModel";
 import SignUpModel from "../models/SignUpModel";
 import UserModel from "../models/UserModel";
 
-const apiUrl = "https://localhost:44374/api";
+const apiUrl = "http://localhost:44374/api";
 
 export const makeAnOrder = async (order: OrderModel): Promise<any> => {
     const requestOptions = {
@@ -112,7 +112,9 @@ export const addNewProduct = async (product: ProductDto): Promise<any> => {
     await fetch(`${apiUrl}/products`, requestOptions);
 };
 
-export const signUp = async (signUpModel: SignUpModel): Promise<AuthModel | ErrorModel> => {
+export const signUp = async (
+    signUpModel: SignUpModel
+): Promise<AuthModel | ErrorModel> => {
     const requestOptions = {
         method: "POST",
         headers: {
@@ -127,7 +129,9 @@ export const signUp = async (signUpModel: SignUpModel): Promise<AuthModel | Erro
     return response;
 };
 
-export const signIn = async (signInModel: SignInModel): Promise<AuthModel | ErrorModel> => {
+export const signIn = async (
+    signInModel: SignInModel
+): Promise<AuthModel | ErrorModel> => {
     const requestOptions = {
         method: "POST",
         headers: {

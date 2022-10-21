@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Diploma.Models.Catalog" Collapsed="true">
+    <Position X="8.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAEAAAAAAAAAAAAgAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Models\Catalog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diploma.Models.Order" Collapsed="true">
+    <Position X="8.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAADAGAAACACAAAIACAAAAgAEBAIAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Models\Order.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diploma.Models.OrderProduct" Collapsed="true">
+    <Position X="10" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAECAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Models\OrderProduct.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diploma.Models.OrderStatus" Collapsed="true">
+    <Position X="4.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\OrderStatus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diploma.Models.Product" Collapsed="true">
+    <Position X="6.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAEAAQAgAEAAAAAAAAADAAgAAAAAAAAAgAEAAAg=</HashCode>
+      <FileName>Models\Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diploma.Models.Role" Collapsed="true">
+    <Position X="6.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Role.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diploma.Models.User" Collapsed="true">
+    <Position X="4.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAGIAACAEAAAAEAAAAAAAAAAIAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Models\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diploma.Providers.CatalogDataProvider" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Providers\CatalogDataProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Diploma.Providers.OrderDataProvider" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAQAgAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Providers\OrderDataProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Diploma.Providers.ProductsDataProvider" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAIAAAAAAAAQAgAAAAAAAAAQAAAAAAAAQA=</HashCode>
+      <FileName>Providers\ProductsDataProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Diploma.Providers.RoleDataProvider" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Providers\RoleDataProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Diploma.Providers.UserDataProvider" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAEAAAAAAAAAAAAAAAAAAAAAAgEAAAAAAAAAA=</HashCode>
+      <FileName>Providers\UserDataProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Diploma.Services.CatalogService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Services\CatalogService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Diploma.Services.OrderService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAEAAAAAAABAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\OrderService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Diploma.Services.PasswordHashService" Collapsed="true">
+    <Position X="3" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\PasswordHashService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diploma.Services.ProductService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAABQAAAAAAAAAAAQAAAAAACQQA=</HashCode>
+      <FileName>Services\ProductService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Diploma.Services.UserService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEEAAAAAABJAAAAAABAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Services\UserService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="Diploma.Interfaces.ICatalogDataProvider" Collapsed="true">
+    <Position X="3" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Interfaces\ICatalogDataProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Diploma.Interfaces.ICatalogService" Collapsed="true">
+    <Position X="4.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Interfaces\ICatalogService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Diploma.Interfaces.IOrderDataProvider" Collapsed="true">
+    <Position X="6.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAgAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Interfaces\IOrderDataProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Diploma.Interfaces.IOrderService" Collapsed="true">
+    <Position X="8.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IOrderService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Diploma.Interfaces.IProductsDataProvider" Collapsed="true">
+    <Position X="3" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAQAgAAAAAAAAAQAAAAAAAAQA=</HashCode>
+      <FileName>Interfaces\IProductsDataProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Diploma.Interfaces.IProductService" Collapsed="true">
+    <Position X="4.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAQAAAAAACQQA=</HashCode>
+      <FileName>Interfaces\IProductService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Diploma.Interfaces.IRoleDataProvider" Collapsed="true">
+    <Position X="6.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IRoleDataProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Diploma.Interfaces.IUserDataProvider" Collapsed="true">
+    <Position X="8.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAgEAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IUserDataProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Diploma.Interfaces.IUserService" Collapsed="true">
+    <Position X="3" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAJAAAAAABAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Interfaces\IUserService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

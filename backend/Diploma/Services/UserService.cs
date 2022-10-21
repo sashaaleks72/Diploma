@@ -103,10 +103,10 @@ namespace Diploma.Services
             using (var httpClient = new HttpClient())
             {
 
-                var discoveryDocument = await httpClient.GetDiscoveryDocumentAsync("https://localhost:44382");
+                var discoveryDocument = await httpClient.GetDiscoveryDocumentAsync("http://host.docker.internal:44382");
                 var token = await httpClient.RequestPasswordTokenAsync(new PasswordTokenRequest 
                 {
-                    Address = discoveryDocument.TokenEndpoint,
+                    Address = "http://host.docker.internal:44382/connect/token",
                     ClientId = "react_login",
                     ClientSecret = "react_pass",
                     Scope = "openid",

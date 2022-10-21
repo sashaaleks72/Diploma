@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// var webApi = builder.Configuration["WebApiHost"];
 var server = builder.Configuration["DBServer"];
 var port = builder.Configuration["DBPort"];
 var user = builder.Configuration["DBUser"];
